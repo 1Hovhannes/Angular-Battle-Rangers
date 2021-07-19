@@ -1,0 +1,28 @@
+<div class="rangersDiv">
+  <div class="rangerOne">
+    <h1>{{ ranger1 && ranger1.health }}</h1>
+    <h2>Ranger 1</h2>
+    <button (click)="createRanger('ranger1')">Ranger-1</button>
+  </div>
+
+  <div>
+    <button
+      (click)="onStartBattle()"
+      [disabled]="isBattleFinished || !isRangersCreated"
+    >
+      Start
+    </button>
+    <button
+      (click)="onStopBattle()"
+      [disabled]="!isBattleStarted || isBattleFinished || !isRangersCreated"
+    >
+      Stop
+    </button>
+  </div>
+
+  <div class="rangerTwo">
+    <h1>{{ ranger2 && ranger2.health }}</h1>
+    <h2>Ranger 2</h2>
+    <button (click)="createRanger('ranger2')">Ranger-2</button>
+  </div>
+</div>
